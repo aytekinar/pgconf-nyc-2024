@@ -52,3 +52,25 @@ pub fn vector_dot_product_inefficient(v1: Vec<f32>, v2: Vec<f32>) -> f32 {
 pub fn vector_norm(v: &[f32]) -> Result<f32, VectorServiceError> {
     vector_dot_product(v, v).and_then(sqrt)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_vector_dot_product_success() {
+        let v1 = vec![1.0, 2.0, 3.0];
+        let v2 = vec![4.0, 5.0, 6.0];
+        assert_eq!(32.0, vector_dot_product(&v1, &v2).unwrap());
+    }
+
+    #[test]
+    fn test_vector_dot_product_error() {
+        let v1 = vec![1.0, 2.0, 3.0];
+        let v2 = vec![4.0, 5.0];
+        assert_eq!(
+            "VectorServiceError: code=1, message=vectors must have the same length",
+            format!("{}", vector_dot_product(&v1, &v2).unwrap_err())
+        );
+    }
+}

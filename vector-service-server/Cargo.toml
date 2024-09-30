@@ -10,3 +10,10 @@ structured-logger = "1"
 tokio = { version = "1", features = ["rt-multi-thread"] }
 tonic = "0.12"
 vector-service-proto = { path = "../vector-service-proto", version = "0.1" }
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["stable"] }
+
+[[bench]]
+name = "dot_product"
+harness = false
