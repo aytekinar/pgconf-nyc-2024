@@ -1,3 +1,11 @@
+pub mod third_party {
+    #![allow(non_upper_case_globals)]
+    #![allow(non_camel_case_types)]
+    #![allow(non_snake_case)]
+    #![allow(dead_code)]
+    include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
+}
+
 #[derive(Debug)]
 pub struct VectorServiceError {
     code: i32,
@@ -24,7 +32,9 @@ pub fn vector_dot_product(v1: &[f32], v2: &[f32]) -> Result<f32, VectorServiceEr
         });
     }
 
-    let result = vector_dot_product_efficient(v1, v2);
+    let result = unsafe {
+        third_party::vector_dot_product(v1.as_ptr(), v2.as_ptr(), v1.len() as libc::size_t)
+    };
 
     Ok(result)
 }

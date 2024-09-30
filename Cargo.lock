@@ -388,6 +388,8 @@ dependencies = [
  "cexpr",
  "clang-sys",
  "itertools 0.13.0",
+ "log",
+ "prettyplease",
  "proc-macro2",
  "quote",
  "regex",
@@ -3079,7 +3081,10 @@ dependencies = [
 name = "vector-service-server"
 version = "0.1.0"
 dependencies = [
+ "bindgen",
+ "cc",
  "criterion",
+ "libc",
  "log",
  "structured-logger",
  "tokio",
