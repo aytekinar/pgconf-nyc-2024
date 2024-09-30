@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "id": "pgenv",
+  "version": "0.1.0",
+  "name": "pgenv",
+  "description": "Installs pgenv and PostgreSQL.",
+  "options": {
+    "pgenv_version": {
+      "type": "string",
+      "description": "The version of pgenv to install.",
+      "default": "latest",
+      "proposals": [
+        "v1.3.6",
+        "v1.3.7",
+        "latest"
+      ]
+    },
+    "pg_version": {
+      "type": "string",
+      "description": "The version(s) of PostgreSQL to install; last one will be selected as default.",
+      "default": "16.4",
+      "proposals": [
+        "14.13,15.8,16.4",
+        "16.4"
+      ]
+    }
+  }
+}

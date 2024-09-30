@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "id": "compliance",
+  "version": "0.1.0",
+  "name": "compliance",
+  "description": "Installs cargo-deny and cargo-udeps for compliance checking.",
+  "options": {
+    "cargo_deny_version": {
+      "type": "string",
+      "description": "The version of cargo-deny to install",
+      "default": "latest",
+      "proposals": [
+        "0.16.1",
+        "latest"
+      ]
+    },
+    "cargo_udeps_version": {
+      "type": "string",
+      "description": "The version of cargo-udeps to install.",
+      "default": "latest",
+      "proposals": [
+        "0.1.50",
+        "latest"
+      ]
+    }
+  },
+  "installsAfter": [
+    "./local-features/rustup"
+  ]
+}

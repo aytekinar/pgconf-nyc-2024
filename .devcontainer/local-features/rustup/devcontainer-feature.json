@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "id": "rustup",
+  "version": "0.1.0",
+  "name": "rustup",
+  "description": "Installs the Rust toolchain via rustup.",
+  "options": {
+    "rust_components": {
+      "type": "string",
+      "description": "Rust components to install via rustup.",
+      "default": "clippy,rustfmt",
+      "proposals": [
+        "clippy",
+        "rustfmt",
+        "clippy,rustfmt"
+      ]
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "tamasfe.even-better-toml",
+        "rust-lang.rust-analyzer"
+      ]
+    }
+  }
+}

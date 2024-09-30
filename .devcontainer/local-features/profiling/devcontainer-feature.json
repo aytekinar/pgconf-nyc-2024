@@ -1,0 +1,44 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "id": "profiling",
+  "version": "0.1.0",
+  "name": "profiling",
+  "description": "Installs Rust-based criterion, flamegraph and samply for profiling.",
+  "options": {
+    "cargo_criterion_version": {
+      "type": "string",
+      "description": "The version of criterion to install.",
+      "default": "latest",
+      "proposals": [
+        "1",
+        "latest"
+      ]
+    },
+    "cargo_flamegraph_version": {
+      "type": "string",
+      "description": "The version of flamegraph to install.",
+      "default": "latest",
+      "proposals": [
+        "0.6.5",
+        "latest"
+      ]
+    },
+    "cargo_samply_version": {
+      "type": "string",
+      "description": "The version of samply to install.",
+      "default": "latest",
+      "proposals": [
+        "0.12.0",
+        "latest"
+      ]
+    }
+  },
+  "installsAfter": [
+    "./local-features/rustup"
+  ],
+  "capAdd": [
+    "BPF",
+    "PERFMON",
+    "SYS_PTRACE"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/refs/heads/main/schemas/devContainerFeature.schema.json",
+  "id": "pgrx",
+  "version": "0.1.0",
+  "name": "pgrx",
+  "description": "Installs pgrx -- the Rust framework for developing PostgreSQL extensions.",
+  "options": {
+    "pgrx_version": {
+      "type": "string",
+      "description": "The version of pgrx to install.",
+      "default": "latest",
+      "proposals": [
+        "0.12",
+        "0.11",
+        "latest"
+      ]
+    }
+  },
+  "installsAfter": [
+    "./local-features/pgenv",
+    "./local-features/rustup"
+  ]
+}
