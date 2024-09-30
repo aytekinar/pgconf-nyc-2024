@@ -20,10 +20,17 @@ pg16 = ["pgrx/pg16", "pgrx-tests/pg16"]
 pg17 = ["pgrx/pg17", "pgrx-tests/pg17"]
 pg_test = []
 rand = ["dep:rand"]
+telemetry = ["opentelemetry", "opentelemetry-otlp", "opentelemetry_sdk"]
 
 [dependencies]
+opentelemetry = { version = "0.25", features = ["metrics", "trace"], optional = true }
+opentelemetry-otlp = { version = "0.25", features = ["metrics", "trace"], optional = true }
+opentelemetry_sdk = { version = "0.25", features = ["metrics", "trace", "rt-tokio"], optional = true }
 pgrx = "=0.12.5"
 rand = { version = "0.8", optional = true }
+tokio = { version = "1", features = ["rt-multi-thread"] }
+tonic = "0.12"
+vector-service-proto = { path = "../vector-service-proto", version = "0.1" }
 
 [dev-dependencies]
 pgrx-tests = "=0.12.5"
