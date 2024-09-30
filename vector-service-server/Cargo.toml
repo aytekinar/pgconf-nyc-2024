@@ -4,9 +4,15 @@ version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[features]
+telemetry = ["opentelemetry", "opentelemetry-otlp", "opentelemetry_sdk"]
+
 [dependencies]
 libc = "0.2"
 log = "0.4"
+opentelemetry = { version = "0.25", features = ["metrics", "trace"], optional = true }
+opentelemetry-otlp = { version = "0.25", features = ["metrics", "trace"], optional = true }
+opentelemetry_sdk = { version = "0.25", features = ["metrics", "trace", "rt-tokio"], optional = true }
 structured-logger = "1"
 tokio = { version = "1", features = ["rt-multi-thread"] }
 tonic = "0.12"
