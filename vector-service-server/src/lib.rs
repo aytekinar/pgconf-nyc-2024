@@ -24,7 +24,7 @@ pub fn vector_dot_product(v1: &[f32], v2: &[f32]) -> Result<f32, VectorServiceEr
         });
     }
 
-    let result = vector_dot_product_inefficient(v1.into(), v2.into());
+    let result = vector_dot_product_efficient(v1, v2);
 
     Ok(result)
 }
@@ -47,6 +47,10 @@ pub fn vector_dot_product_inefficient(v1: Vec<f32>, v2: Vec<f32>) -> f32 {
         result += v1[i] * v2[i];
     }
     result
+}
+
+pub fn vector_dot_product_efficient(v1: &[f32], v2: &[f32]) -> f32 {
+    v1.iter().zip(v2.iter()).map(|(a, b)| a * b).sum()
 }
 
 pub fn vector_norm(v: &[f32]) -> Result<f32, VectorServiceError> {
