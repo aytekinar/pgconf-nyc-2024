@@ -1,5 +1,5 @@
 [workspace]
-members = ["pgconf"]
+members = ["pgconf", "vector-service-proto", "vector-service-server"]
 resolver = "2"
 
 [profile.dev]

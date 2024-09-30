@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+// import "google/protobuf/empty.proto";
+
+package vector_service;
+
+message DotProductRequest {
+  repeated float vector1 = 1;
+  repeated float vector2 = 2;
+}
+
+message DotProductResponse {
+  float result = 1;
+}
+
+message VectorNormRequest {
+  repeated float vector = 1;
+}
+
+message VectorNormResponse {
+  float result = 1;
+}
+
+service VectorService {
+  rpc DotProduct(DotProductRequest) returns (DotProductResponse);
+  rpc VectorNorm(VectorNormRequest) returns (VectorNormResponse);
+}
