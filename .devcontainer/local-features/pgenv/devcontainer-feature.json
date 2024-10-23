@@ -24,5 +24,12 @@
         "16.4"
       ]
     }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vadimcn.vscode-lldb"
+      ]
+    }
   }
 }

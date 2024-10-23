@@ -10,8 +10,8 @@
       "description": "The version of pgrx to install.",
       "default": "latest",
       "proposals": [
-        "0.12",
-        "0.11",
+        "^0.12",
+        "^0.11",
         "latest"
       ]
     }

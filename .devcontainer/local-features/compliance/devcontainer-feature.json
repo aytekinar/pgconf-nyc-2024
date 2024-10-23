@@ -5,12 +5,30 @@
   "name": "compliance",
   "description": "Installs cargo-deny and cargo-udeps for compliance checking.",
   "options": {
+    "cargo_audit_version": {
+      "type": "string",
+      "description": "The version of cargo-audit to install",
+      "default": "latest",
+      "proposals": [
+        "^0.20",
+        "latest"
+      ]
+    },
+    "cargo_auditable_version": {
+      "type": "string",
+      "description": "The version of cargo-auditable to install",
+      "default": "latest",
+      "proposals": [
+        "^0.6",
+        "latest"
+      ]
+    },
     "cargo_deny_version": {
       "type": "string",
       "description": "The version of cargo-deny to install",
       "default": "latest",
       "proposals": [
-        "0.16.1",
+        "^0.16",
         "latest"
       ]
     },
@@ -19,7 +37,7 @@
       "description": "The version of cargo-udeps to install.",
       "default": "latest",
       "proposals": [
-        "0.1.50",
+        "^0.1",
         "latest"
       ]
     }

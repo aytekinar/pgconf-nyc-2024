@@ -7,23 +7,26 @@
   "workspaceFolder": "/workspace",
   "features": {
     "./local-features/compliance": {
+      "cargo_audit_version": "latest",
+      "cargo_auditable_version": "latest",
       "cargo_deny_version": "latest",
       "cargo_udeps_version": "latest"
     },
     "./local-features/pgenv": {
-      "pgenv_version": "v1.3.7",
-      "pg_version": "14.13,15.8,16.4"
+      "pgenv_version": "v1.3.8",
+      "pg_version": "15.8,16.4,17.0"
     },
     "./local-features/pgrx": {
-      "pgrx_version": "0.12.5"
+      "pgrx_version": "^0.12"
     },
     "./local-features/profiling": {
+      "cargo_criterion_version": "latest",
       "cargo_flamegraph_version": "latest",
       "cargo_samply_version": "latest"
     },
     "./local-features/protoc": {
-      "protoc_version": "v28.2",
-      "protoc_sha256": "2febfd42b59ce93a28eb789019a470a3dd0449619bc04f84dad1333da261dec1"
+      "protoc_version": "v28.3",
+      "protoc_sha256": "0ad949f04a6a174da83cdcbdb36dee0a4925272a5b6d83f79a6bf9852076d53f"
     },
     "./local-features/rustup": {
       "rust_components": "rustfmt,clippy"

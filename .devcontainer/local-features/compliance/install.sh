@@ -14,6 +14,20 @@ fi
 # Load the environment/profile variables
 . .profile
 
+# Install cargo-audit
+if [[ "${CARGO_AUDIT_VERSION}" == "latest" ]]; then
+  cargo install cargo-audit --locked
+else
+  cargo install cargo-audit --version "${CARGO_AUDIT_VERSION}" --locked
+fi
+
+# Install cargo-auditable
+if [[ "${CARGO_AUDITABLE_VERSION}" == "latest" ]]; then
+  cargo install cargo-auditable --locked
+else
+  cargo install cargo-auditable --version "${CARGO_AUDITABLE_VERSION}" --locked
+fi
+
 # Install cargo-deny
 if [[ "${CARGO_DENY_VERSION}" == "latest" ]]; then
   cargo install cargo-deny --locked

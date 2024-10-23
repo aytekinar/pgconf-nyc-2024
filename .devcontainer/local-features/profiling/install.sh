@@ -5,7 +5,7 @@ set -euo pipefail
 if [[ $UID -eq 0 ]]; then
   # Install profiling requirements
   apt update
-  apt install -y gnuplot linux-perf
+  apt install -y bpfcc-tools gnuplot linux-perf sysstat
   apt clean
 
   # Switch to non-root user and run the script again in the user's home directory
@@ -23,7 +23,7 @@ fi
 if [[ "${CARGO_CRITERION_VERSION}" == "latest" ]]; then
   cargo install cargo-criterion --locked
 else
-  cargo install cargo-criterion --version "${CARGO_FLAMEGRAPH_VERSION}" --locked
+  cargo install cargo-criterion --version "${CARGO_CRITERION_VERSION}" --locked
 fi
 
 # Install flamegraph
